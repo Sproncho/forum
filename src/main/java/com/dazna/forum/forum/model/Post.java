@@ -23,7 +23,8 @@ public class Post {
     @Setter
     String author;
     @Setter
-    String dateCreated;
+    LocalDateTime dateCreated;
+    //String dateCreated;
     List<String> tags;
     @Setter
     int likes = 0;

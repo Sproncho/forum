@@ -22,7 +22,7 @@ public class ForumServiceImpl implements ForumService {
     public PostDto addPost(String author, PostAddDto postAddDto) {
         Post post = modelMapper.map(postAddDto, Post.class);
         post.setAuthor(author);
-        //post.setDateCreated(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ"))); выдает ошибку. не понял как работают LocalDateTime и ModuleMapper
+        post.setDateCreated(LocalDateTime.now());
         forumRepository.save(post);
         return modelMapper.map(post,PostDto.class);
     }
