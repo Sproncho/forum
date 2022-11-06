@@ -40,7 +40,6 @@ public class ForumController{
     }
 
     @DeleteMapping("/forum/post/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public PostDto deletePost(@PathVariable String id) {
         return forumService.deletePost(id);
     }
